@@ -1,0 +1,72 @@
+
+package weekap17;
+import java.util.Scanner;
+
+public class WeekAp17
+{
+
+    public static void main(String[] args)
+    {
+      double score1 = 85.2;
+      double score2 = 75.8;
+      double score3 = 98.5;
+      
+      double average = ((score1 + score2 + score3) / 3);
+      
+      System.out.printf("The average is %f\n", average );
+      //Each one of the scores are the same data type
+      //Each one also shares a common name and they
+      //represent a group of information
+      
+      //An array is a datat structure that allows 
+      //us to conveiently organize this pattern
+      //of data managment
+      
+      //The key to an array is that all elements in 
+      //the group pf daya have the same data type
+      double x;
+      
+      double [] scores;
+      //This declares scores to be an array if doubles
+      //the actual number if elements to reserve in
+      //the array has not been done yet
+      
+      scores = new double [25];
+      //This line of code physically allocates (reserves
+      //25 elements in memory with each element being
+      //a double data type
+       
+      //Now i can simulate adding scores to an array 
+      Scanner input = new Scanner(System.in);
+      int numberOfScores = 0;
+      
+      scores [0] = 85.2;
+      scores [1] = 75.8;
+      scores [2] = 98.5;
+      scores [3] = 65.8;
+      scores [4] = 99.2;
+      
+      double sum = 0.0;
+      //scores.lenth give capacity
+      //for (int c = 0; c < 5; c++)
+     // for (int c = 0; c < scores.length; c++)
+     System.out.print("Enter a score : ");
+     double userScore = input.nextDouble();
+     while (userScore != -1)
+      {
+          scores[numberOfScores++] = userScore; 
+          sum += userScore; 
+          System.out.print("Enter a score: ");
+          userScore = input.nextDouble();
+                 
+          //sum += scores[c];
+          //average = sum /5;
+        }          
+      average = sum /numberOfScores;
+            //double averages = ((scores[0] + scores[1] + scores[2]) / 3);
+            System.out.printf("The average is %f\n", average );
+      
+                 
+    }
+   
+}
